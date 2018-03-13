@@ -6,6 +6,12 @@ using System;
 
 public class PlayerController : NetworkBehaviour {
 
+	[SyncVar(hook="OnColor")]
+	public Color myColor;
+
+	[SyncVar]
+	public Boolean tagged;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -28,9 +34,31 @@ public class PlayerController : NetworkBehaviour {
 		if (Math.Abs (transform.position.y) > 10) {
 			transform.Translate (0, -2 * transform.position.y, 0);
 		}
+
+		if (Input.GetKeyDown (KeyCode.P)) {
+			CmdTag ();
+		}
 	}
 
-	public override void OnStartLocalPlayer() {
-		GetComponent<MeshRenderer> ().material.color = Color.red;
+	[Command]
+	public void CmdTag () {
+		if (tagged) {
+			tagged = false;
+			OnColor (Color.green);
+		} else {
+			tagged = true;
+			OnColor (Color.red);
+		}
+	}
+
+	void OnColor(Color newColor)
+	{
+		GetComponent<Renderer>().material.color = newColor;
+		myColor = newColor;
+	}
+
+	public override void OnStartClient()
+	{
+		GetComponent<Renderer>().material.color = myColor;
 	}
 }
