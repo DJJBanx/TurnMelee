@@ -64,11 +64,9 @@ public class PlayerController : NetworkBehaviour {
 		if (tagged) {
 			tagged = false;
 			OnColor (Color.green);
-			transform.Translate (2, 2, 0);
 		} else {
 			tagged = true;
 			OnColor (Color.red);
-			transform.Translate (-2, -2, 0);
 		}
 	}
 
