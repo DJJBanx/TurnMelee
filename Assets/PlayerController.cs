@@ -58,7 +58,7 @@ public class PlayerController : NetworkBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision){
 		print ("Collision");
-		if (gameObject.tag = "green")
+		if (gameObject.tag == "green")
 			return;
 		collision.gameObject.tag = "red";
 		gameObject.tag = "green";
