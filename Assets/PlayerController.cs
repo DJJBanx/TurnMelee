@@ -14,6 +14,7 @@ public class PlayerController : NetworkBehaviour {
 
 	public int ConfigDelay;
 	int movementDelay;
+	int collisionDelay;
 
 	// Use this for initialization
 	void Start () {
@@ -22,16 +23,12 @@ public class PlayerController : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (!isLocalPlayer)
 			return;
 
-		if (tagged == true && gameObject.tag == "green")
-			CmdTag ();
-		if (tagged == false && gameObject.tag == "red") {
-			movementDelay = ConfigDelay;
-			CmdTag ();
-		}
-
+		if (collisionDelay > 0)
+			collisionDelay--;
 		if (movementDelay > 0) {
 			movementDelay--;
 			return;
@@ -56,12 +53,15 @@ public class PlayerController : NetworkBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D collision){
+	void OnCollisionExit2D(Collision2D collision){
 		print ("Collision");
-		if (gameObject.tag = "green")
+		if (collisionDelay > 0) {
 			return;
-		collision.gameObject.tag = "red";
-		gameObject.tag = "green";
+		}
+		if (!tagged)
+			movementDelay = ConfigDelay;
+		collisionDelay = ConfigDelay;
+		CmdTag ();
 	}
 
 	[Command]
