@@ -53,7 +53,6 @@ public class PlayerController : NetworkBehaviour {
 		}
 		GameObject hit = collison.gameObject;
 		CmdTag ();
-		transform.Translate (5,5,0);
 		delay = ConfigDelay;
 	}
 
@@ -62,9 +61,11 @@ public class PlayerController : NetworkBehaviour {
 		if (tagged) {
 			tagged = false;
 			OnColor (Color.green);
+			transform.Translate (2, 2, 0);
 		} else {
 			tagged = true;
 			OnColor (Color.red);
+			transform.Translate (-2, -2, 0);
 		}
 	}
 
