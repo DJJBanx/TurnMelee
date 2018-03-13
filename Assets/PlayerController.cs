@@ -50,7 +50,7 @@ public class PlayerController : NetworkBehaviour {
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D collision){
+	void OnCollisionExit2D(Collision2D collision){
 		if (delay > 0) {
 			return;
 		}
