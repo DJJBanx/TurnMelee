@@ -50,11 +50,12 @@ public class PlayerController : NetworkBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D collison){
+	void OnCollisionExit2D(Collision2D collision){
 		if (delay > 0) {
 			return;
 		}
-		delay = ConfigDelay;
+		if (!tagged)
+			delay = ConfigDelay;
 		CmdTag ();
 	}
 
