@@ -7,10 +7,13 @@ using System;
 public class PlayerController : NetworkBehaviour {
 
 	[SyncVar(hook="OnColor")]
-	public Color myColor = Color.red;
+	public Color myColor;
 
 	[SyncVar]
-	public Boolean tagged = true;
+	public Boolean tagged;
+
+	public int ConfigDelay;
+	int delay;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +25,11 @@ public class PlayerController : NetworkBehaviour {
 
 		if (!isLocalPlayer)
 			return;
-		
+
+		if (delay > 0) {
+			delay--;
+			return;
+		}
 		float x = Input.GetAxis("Horizontal") * 0.1f;
 		float y = Input.GetAxis ("Vertical") * 0.1f;
 		transform.Translate (x, y, 0);
@@ -43,13 +50,13 @@ public class PlayerController : NetworkBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D collision){
-		if (!tagged)
+	void OnCollisionEnter2D(Collision2D collison){
+		if (delay > 0) {
 			return;
-		NetworkServer.Destroy (collision.gameObject);
-		NetworkServer.Spawn ((GameObject)Instantiate (collision.gameObject, new Vector2(0,0), new Quaternion(0,0,0,0)));
-
+		}
+		GameObject hit = collison.gameObject;
 		CmdTag ();
+		delay = ConfigDelay;
 	}
 
 	[Command]
