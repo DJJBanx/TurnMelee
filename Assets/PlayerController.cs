@@ -13,8 +13,7 @@ public class PlayerController : NetworkBehaviour {
 	public Boolean tagged;
 
 	public int ConfigDelay;
-	int delay1;
-	int delay2;
+	int movementDelay;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +26,8 @@ public class PlayerController : NetworkBehaviour {
 		if (!isLocalPlayer)
 			return;
 
-		if (delay1 > 0) {
-			delay1--;
+		if (movementDelay > 0) {
+			movementDelay--;
 			return;
 		}
 		float x = Input.GetAxis("Horizontal") * 0.1f;
@@ -52,12 +51,8 @@ public class PlayerController : NetworkBehaviour {
 	}
 
 	void OnCollisionExit2D(Collision2D collision){
-		if (delay2 > 0) {
-			return;
-		}
 		if (!tagged)
-			delay1 = ConfigDelay;
-		delay2 = ConfigDelay;
+			movementDelay = ConfigDelay;
 		CmdTag ();
 	}
 
