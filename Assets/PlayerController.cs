@@ -40,6 +40,11 @@ public class PlayerController : NetworkBehaviour {
 		}
 	}
 
+	void OnCollisionEnter(Collision collison){
+		GameObject hit = collison.gameObject;
+		print (hit);
+	}
+
 	[Command]
 	public void CmdTag () {
 		if (tagged) {
