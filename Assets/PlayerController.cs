@@ -42,8 +42,8 @@ public class PlayerController : NetworkBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collison){
 		GameObject hit = collison.gameObject;
-		print (hit);
 		CmdTag ();
+		transform.Translate (2,2,0);
 	}
 
 	[Command]
