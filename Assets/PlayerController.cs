@@ -54,6 +54,7 @@ public class PlayerController : NetworkBehaviour {
 	}
 
 	void OnCollisionExit2D(Collision2D collision){
+		print ("Collision");
 		if (collisionDelay > 0) {
 			return;
 		}
@@ -65,6 +66,7 @@ public class PlayerController : NetworkBehaviour {
 
 	[Command]
 	public void CmdTag () {
+		print ("Changed Color");
 		if (tagged) {
 			tagged = false;
 			OnColor (Color.green);
