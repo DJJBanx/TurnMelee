@@ -14,6 +14,7 @@ public class PlayerController : NetworkBehaviour {
 
 	public int ConfigDelay;
 	int movementDelay;
+	int collisionDelay;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,8 @@ public class PlayerController : NetworkBehaviour {
 		if (!isLocalPlayer)
 			return;
 
+		if (collisionDelay > 0)
+			collisionDelay--;
 		if (movementDelay > 0) {
 			movementDelay--;
 			return;
@@ -51,8 +54,12 @@ public class PlayerController : NetworkBehaviour {
 	}
 
 	void OnCollisionExit2D(Collision2D collision){
+		if (collisionDelay > 0) {
+			return;
+		}
 		if (!tagged)
 			movementDelay = ConfigDelay;
+		collisionDelay = ConfigDelay;
 		CmdTag ();
 	}
 
