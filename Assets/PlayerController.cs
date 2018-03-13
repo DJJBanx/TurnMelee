@@ -12,6 +12,9 @@ public class PlayerController : NetworkBehaviour {
 	[SyncVar]
 	public Boolean tagged;
 
+	public int ConfigDelay;
+	int delay;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -23,6 +26,10 @@ public class PlayerController : NetworkBehaviour {
 		if (!isLocalPlayer)
 			return;
 
+		if (delay > 0) {
+			delay--;
+			return;
+		}
 		float x = Input.GetAxis("Horizontal") * 0.1f;
 		float y = Input.GetAxis ("Vertical") * 0.1f;
 		transform.Translate (x, y, 0);
@@ -41,9 +48,13 @@ public class PlayerController : NetworkBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collison){
+		if (delay > 0) {
+			return;
+		}
 		GameObject hit = collison.gameObject;
 		CmdTag ();
-		transform.Translate (2,2,0);
+		transform.Translate (5,5,0);
+		delay = ConfigDelay;
 	}
 
 	[Command]

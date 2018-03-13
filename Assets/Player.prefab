@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myColor: {r: 0, g: 0, b: 0, a: 0}
   tagged: 0
+  ConfigDelay: 180
 --- !u!114 &114406463349821586
 MonoBehaviour:
   m_ObjectHideFlags: 1
