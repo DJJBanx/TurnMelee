@@ -54,9 +54,8 @@ public class PlayerController : NetworkBehaviour {
 		if (delay > 0) {
 			return;
 		}
-		GameObject hit = collison.gameObject;
-		CmdTag ();
 		delay = ConfigDelay;
+		CmdTag ();
 	}
 
 	[Command]
