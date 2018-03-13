@@ -34,12 +34,15 @@ public class PlayerController : NetworkBehaviour {
 		float y = Input.GetAxis ("Vertical") * 0.1f;
 		transform.Translate (x, y, 0);
 
-		if (Math.Abs (transform.position.x) > 20) {
-			print ("above or below 10");
-			transform.Translate (-2 * transform.position.x, 0, 0);
+		if (transform.position.x > 20) {
+			transform.Translate (-40, 0, 0);
+		} else if (transform.position.x < -20) {
+			transform.Translate (40, 0, 0);
 		}
-		if (Math.Abs (transform.position.y) > 10) {
-			transform.Translate (0, -2 * transform.position.y, 0);
+		if (transform.position.y > 10) {
+			transform.Translate (0, -20, 0);
+		} else if (transform.position.y < -10) {
+			transform.Translate (0, 20, 0);
 		}
 
 		if (Input.GetKeyDown (KeyCode.P)) {
