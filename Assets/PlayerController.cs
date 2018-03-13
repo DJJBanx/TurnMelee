@@ -40,7 +40,7 @@ public class PlayerController : NetworkBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision collison){
+	void OnCollisionEnter2D(Collision2D collison){
 		GameObject hit = collison.gameObject;
 		print (hit);
 		CmdTag ();
