@@ -55,13 +55,13 @@ public class PlayerController : NetworkBehaviour {
 
 	void OnCollisionExit2D(Collision2D collision){
 		print ("Collision");
-		if (collisionDelay > 0) {
-			return;
+		if (collision.gameObject.CompareTag("Player") && collisionDelay <= 0) {
+			print ("Trigger");
+			if (!tagged)
+				movementDelay = ConfigDelay;
+			collisionDelay = ConfigDelay;
+			CmdTag ();
 		}
-		if (!tagged)
-			movementDelay = ConfigDelay;
-		collisionDelay = ConfigDelay;
-		CmdTag ();
 	}
 
 	[Command]
