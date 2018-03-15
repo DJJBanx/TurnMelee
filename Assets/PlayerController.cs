@@ -9,6 +9,8 @@ public class PlayerController : NetworkBehaviour {
 	[SyncVar(hook="OnColor")]
 	public Color myColor;
 
+	public AudioSource audio;
+
 	[SyncVar]
 	public Boolean tagged;
 
@@ -57,6 +59,7 @@ public class PlayerController : NetworkBehaviour {
 		print ("Collision");
 		if (collision.gameObject.CompareTag("Player") && collisionDelay <= 0) {
 			print ("Trigger");
+			audio.Play ();
 			if (!tagged)
 				movementDelay = ConfigDelay;
 			collisionDelay = ConfigDelay;
