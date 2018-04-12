@@ -630,12 +630,14 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Collab: 1
+    UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 6b3d7fe4-7b7e-41a1-9cf0-3ecf4edc66cf
+  cloudProjectId: a6bcdbdf-db69-4d42-8de2-f8bcba7151e6
   projectName: PrototypeTest
-  organizationId: djjbanx
+  organizationId: mizore742
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
