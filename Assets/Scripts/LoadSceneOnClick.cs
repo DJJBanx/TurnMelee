@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LoadSceneOnClick : MonoBehaviour {
 
 	public void LoadByIndex(int sceneIndex){
-		//Debug.log("Changing scene to scene:" + sceneIndex);
 		SceneManager.LoadScene (sceneIndex);
 	}
 }
