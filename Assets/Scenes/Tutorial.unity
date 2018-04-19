@@ -181,6 +181,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 54639131}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 2d41a97... Changed Main Menu Button to look like a button
 --- !u!1 &197549191
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,8 +220,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -2.7445555, y: 46.300003}
   m_SizeDelta: {x: -743.5, y: -443}
+=======
+  m_AnchoredPosition: {x: 15.5, y: 18.9}
+  m_SizeDelta: {x: -672.8, y: -404.6}
+>>>>>>> parent of 2d41a97... Changed Main Menu Button to look like a button
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &197549193
 MonoBehaviour:
@@ -315,6 +324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21d19a733ede40a9a29c996b614f3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+>>>>>>> 2d41a97f5da899bd9907f907d21cc1e4186f3ad3
+=======
+>>>>>>> parent of 2d41a97... Changed Main Menu Button to look like a button
 --- !u!1 &265605584
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,12 +611,30 @@ RectTransform:
   m_Father: {fileID: 197549192}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 56.1, y: -17.6}
   m_SizeDelta: {x: 117.68, y: 61.2}
   m_Pivot: {x: 0.5000004, y: 0.49999994}
 --- !u!114 &1093554639
+=======
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1048137206
+>>>>>>> 2d41a97f5da899bd9907f907d21cc1e4186f3ad3
+=======
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 78.250305, y: -23.717705}
+  m_SizeDelta: {x: 117.68, y: 61.2}
+  m_Pivot: {x: 0.5000004, y: 0.49999994}
+--- !u!114 &1093554639
+>>>>>>> parent of 2d41a97... Changed Main Menu Button to look like a button
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -622,11 +654,23 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
+<<<<<<< HEAD
     m_Font: {fileID: 12800000, guid: 58b647c5b2ec4184e9a07a561cdf0644, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
+=======
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+<<<<<<< HEAD
+    m_MinSize: 0
+>>>>>>> 2d41a97f5da899bd9907f907d21cc1e4186f3ad3
+=======
+    m_MinSize: 10
+>>>>>>> parent of 2d41a97... Changed Main Menu Button to look like a button
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
